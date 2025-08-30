@@ -2,7 +2,7 @@ class Solution {
 public:
     int deleteAndEarn(vector<int>& nums) {
         int n=nums.size();
-        // use map because we it sorts the keys by default.
+        // use map because we it sorts the keys internally.
         map<int,int>points;
         int i;
         for(i=0;i<n;i++){
