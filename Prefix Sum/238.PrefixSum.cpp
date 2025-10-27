@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<int> productExceptSelf(vector<int>& nums) {
+    vector<int> productExceptSelfSpaceO(n)(vector<int>& nums) {
         int n=nums.size();
         vector<int>res(n,1);
         vector<int>left(n,1);
@@ -15,4 +15,20 @@ public:
         }
         return res;
     }
+
+      vector<int> productExceptSelfSpaceO(1)(vector<int>& nums){
+        int n=nums.size();
+        vector<int>res(n,1);
+        int curr=1,i;
+        for(i=0;i<n;i++){
+            res[i]*=curr;
+            curr*=nums[i];
+        }
+        curr=1;
+        for(i=n-1;i>=0;i--){
+            res[i]*=curr;
+            curr*=nums[i];
+        }
+        return res;
+     }
 };
