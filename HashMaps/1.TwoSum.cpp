@@ -1,3 +1,6 @@
+// Brute Force - n2
+// Sorting + HashMap + Two Pointers - nlogn
+// HashMap - n
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
