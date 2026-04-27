@@ -18,4 +18,21 @@ public:
         }
         return res;
     }
+
+    // use unordered_set   
+       int lengthOfLongestSubstring(string s) {
+        int n=s.length();
+        int maxLen=0;
+        int i,right,left=0;
+        unordered_set<char>al;
+        for(right=0;right<n;right++){
+            while(al.find(s[right])!=al.end()){
+                al.erase(s[left]);
+                left++;
+            }
+            al.insert(s[right]);
+            maxLen=max(maxLen,right-left+1);
+        }
+        return maxLen;
+    }
 };
