@@ -37,3 +37,24 @@
         }
         return res;
     }
+
+     vector<vector<int>> merge(vector<vector<int>>& intervals) {
+        if(intervals.empty())
+        return {};
+        sort(intervals.begin(),intervals.end());
+        vector<vector<int>>merged;
+        merged.push_back(intervals[0]);
+        int i,n=intervals.size();
+        for(i=1;i<n;i++){
+            int currentEnd=merged.back()[1];
+            int nextStart=intervals[i][0];
+            int nextEnd=intervals[i][1];
+            if(currentEnd>=nextStart){
+                merged.back()[1]=max(currentEnd,nextEnd);
+            }
+            else{
+                merged.push_back(intervals[i]);
+            }
+        }
+        return merged;
+    }
