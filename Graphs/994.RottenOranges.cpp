@@ -1,3 +1,8 @@
+/*
+Trick: Use Breadth First Search (BFS) to simulate the rotting process. Start from all initially rotten oranges and propagate the rotting to adjacent fresh oranges level by level.
+Time Complexity: O(M*N) where M is the number of rows and N is the number of columns in the grid.
+Space Complexity: O(M*N) for the queue storing the positions of rotten oranges.
+*/
 class Solution {
 public:
     int orangesRotting(vector<vector<int>>& grid) {
